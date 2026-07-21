@@ -2,10 +2,17 @@
 
 Selected research, original analysis, and technical notes from CrossingKey.
 
-## Purpose
+## Index
 
-This repository holds work that helps readers understand the questions, frameworks, and evidence behind CrossingKey’s public point of view.
+| Area | Focus |
+| --- | --- |
+| Human–AI interaction | Clear control, review, and shared understanding in AI-assisted work |
+| Agentic systems | Boundaries, auditability, and meaningful human oversight |
+| Product architecture | Turning technical capability into understandable, usable offers |
+| Developer tools | Practical workflows, interoperability, and durable documentation |
 
-## Standard
+## Method
 
-Research notes separate observed facts, cited sources, working hypotheses, and personal analysis. Publication is not legal, financial, medical, or security advice.
+Research distinguishes source-backed facts, working hypotheses, and editorial analysis. Primary documentation, original research, standards bodies, and direct artifacts are preferred. Notes record sources and access dates where applicable.
+
+Publication is informational only and is not legal, financial, medical, or security advice.
