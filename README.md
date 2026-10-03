@@ -1,61 +1,92 @@
 # CrossingKey Public Research
 
-**Selected research, technical analysis, and working models from CrossingKey Intelligence.**
+**Public-safe research notes, architecture studies, experiments, and evidence methods from CrossingKey Intelligence.**
 
-This is the research layer of the public surface: where architectural ideas are stated with evidence levels, limitations, and testable next steps rather than promoted from hypothesis to fact.
+This repository is not the documentation mirror for CrossingKey MCP and it is not a single-paper showcase. It is the research surface for questions that sit underneath multiple CrossingKey systems: how humans express intent to machines, how agents retain and qualify context, how autonomous systems prove what happened, how machine commerce survives ambiguous outcomes, how local AI can remain useful under constrained hardware, and how experimental architectures move from hypothesis to evidence.
 
-## Featured research
+## Research map
+
+| Program | Central question | Public status |
+| --- | --- | --- |
+| Human–AI interaction | How should intent, correction, uncertainty, review, and operator authority be represented when AI can act? | Active research |
+| Agent execution & orchestration | How can tool-using systems plan, act, challenge their own plans, stop safely, and recover from failure? | Active research |
+| Memory, context & provenance | How can persistent context retain origin, freshness, confidence, and auditability without pretending model context is durable memory? | Active research |
+| Machine commerce | What state, authorization, reconciliation, entitlement, receipt, and replay controls are needed when software participates in commerce? | Active research + production-informed study |
+| Verification & evidence | What evidence is sufficient to distinguish an attempted action from a completed and verified outcome? | Active research |
+| Protocol discovery & interoperability | How do agents discover capabilities, understand requirements, compare offers, and cross protocol boundaries without hidden assumptions? | Active research |
+| Local/private AI | Which workloads can move toward local models, embeddings, memory, policy, and tooling under real hardware constraints? | Active research |
+| Governed languages & execution formats | Can structured documents and execution envelopes make authority, provenance, validation, and intent more inspectable? | Exploratory research |
+| Product & interface architecture | How should complex technical capability expose state, price, boundaries, failure, delivery, and proof to humans and agents? | Applied research |
+
+These programs overlap, but they are not aliases for one another.
+
+## Published research
 
 ### HAAR: High-Agency Agentic Runtime
 
-HAAR is a proposed architecture for bounded, verifiable AI execution. It focuses on structured intent, fresh-state inspection, adversarial review, state shadowing, idempotent recovery, bounded attempts, and explicit human authority.
+[Read the public paper](research/HAAR.md).
 
-**Read:** [research/HAAR.md](research/HAAR.md)
+HAAR is one research program inside this repository. It proposes a bounded execution architecture built around structured intent, fresh-state inspection, adversarial review, state shadowing, idempotent recovery, stopping rules, and human authority. It is published as research, not as a claim that the complete architecture is deployed or benchmarked.
 
-Execution outline:
+## Research lineages under review
 
-`Authorize → Normalize → Inspect → Plan → Review → Execute → Verify → Record or Escalate`
+The CrossingKey archive contains additional documented lines of investigation that are being reduced into public-safe research notes before publication:
 
-HAAR is published as research, not as a claim that the complete architecture is deployed or benchmarked.
+- **Human–AI Interaction Architecture:** intent, operator authority, interaction correction, review, escalation, and the transition from conversational assistance toward tool-using systems.
+- **CCMB / persistent-context research:** working, transactional, and longer-lived context; source/provenance labels; local persistence; retrieval; and the distinction between loaded state and model memory.
+- **NavigatorFS / evidence-bearing state:** integrity inventories, hashes, logs, receipts, exports, validation, diagnostics, and reconstructable local state.
+- **XKEY / `.xkey` research:** structured command/document envelopes, validation, governance, execution boundaries, and portable machine-readable intent. Archive material includes prototypes and unverified components, so no runtime-completeness claim is made here.
+- **Machine-commerce research:** x402, payment requirements, settlement verification, idempotency, replay prevention, entitlement issuance, receipts, provider state, and ambiguous-outcome reconciliation.
+- **Agent discovery research:** MCP discovery, registries, capability metadata, machine-readable requirements, quoting, and the gap between being callable and being safely purchasable.
+- **Local-first agent systems:** local models, embeddings, persistent state, policy components, constrained compute, privacy boundaries, and selective use of cloud models.
+- **Verification systems:** evidence ledgers, read-back checks, manifests, checksums, receipts, API responses, smoke tests, failure injection, and the question of what constitutes proof of completion.
+- **Applied evidence engines:** experiments such as property/public-record verification that separate physical evidence, official records, permit evidence, and marketing claims rather than collapsing them into a single confidence statement.
 
-## Current research areas
+A lineage appearing here means there is archive evidence of research or experimentation. It does **not** mean every named system is complete, deployed, validated, commercially available, or suitable for public source release.
 
-| Area | Focus |
-| --- | --- |
-| Human–AI interaction | Intent, context, correction, review, and shared understanding |
-| Governed agentic systems | Permissions, authority, tool use, state, observability, and recovery |
-| Machine commerce | Authorization, idempotency, reconciliation, receipts, entitlements, and bounded execution |
-| Product architecture | Converting technical capability into understandable commercial outcomes |
-| Developer tools | Durable workflows, interoperability, documentation, and verification |
-| Local/private AI | Useful AI systems under consumer hardware, privacy, and resource constraints |
+## Research boundary
 
-## Evidence levels
+This repository publishes conclusions and abstractions, not the private archive.
 
-- **Source-backed fact:** supported by a cited primary or high-quality source.
-- **Observed result:** supported by an experiment, artifact, test, or direct system output.
-- **Working hypothesis:** plausible interpretation that still requires testing.
-- **Editorial analysis:** reasoned synthesis, explicitly not represented as established fact.
+Public material must not include credentials, private customer information, personal records, private infrastructure topology, wallet secrets, seed material, unpublished security-sensitive implementation detail, proprietary datasets, or personal biographical material that is unnecessary to the technical claim.
 
-## Method
+Names from experimental archives are not treated as proof of implementation. Where source material describes a component as proposed, recovered, prototype, specified, unverified, or incomplete, the public record preserves that uncertainty.
 
-1. Prefer primary documentation, standards bodies, original artifacts, and direct experiments.
-2. Record source and access date when external material materially supports a claim.
-3. Separate observed behavior from interpretation.
-4. Preserve negative results when they change the conclusion.
-5. Promote research into specifications or engineering guidance only when the evidence supports that step.
+## Evidence classes
+
+- **Standards fact:** explicitly defined by an authoritative specification or standards source.
+- **Observed result:** directly supported by a reproducible experiment, artifact, test, or system output.
+- **Implementation fact:** directly observable in source or a running implementation.
+- **Market observation:** observed across current services, registries, repositories, or developer activity.
+- **Community signal:** useful evidence of a problem or pattern, but insufficient alone to establish fact.
+- **Working hypothesis:** a proposed explanation, design, or opportunity that still requires testing.
+- **Experiment:** a controlled attempt to support or reject a hypothesis.
+- **Editorial analysis:** reasoned synthesis, clearly separated from established fact.
+
+## Publication rule
+
+Research moves toward publication through:
+
+`Question → Evidence → Classification → Experiment or Analysis → Limitations → Public-safe Note`
+
+It moves toward engineering only when the evidence supports that transition:
+
+`Research → Specification → Implementation → Verification → Production claim`
+
+Those stages must not be collapsed.
 
 ## Start here
 
+- [Research index](RESEARCH_INDEX.md)
+- [Research methodology](METHODOLOGY.md)
 - [HAAR](research/HAAR.md)
-- [RESEARCH_INDEX.md](RESEARCH_INDEX.md)
-- [METHODOLOGY.md](METHODOLOGY.md)
 
 ## Related public surfaces
 
-- Production machine-commerce source: https://github.com/crossingkey-holdings/crossingkey-mcp
-- Professional evidence: https://github.com/crossingkey-holdings/experience
+- Production MCP implementation: https://github.com/crossingkey-holdings/crossingkey-mcp
 - Open specifications: https://github.com/crossingkey-holdings/crossingkey-open-specifications
 - Developer documentation: https://github.com/crossingkey-holdings/crossingkey-developer-documentation
+- Professional evidence: https://github.com/crossingkey-holdings/experience
 - Company: https://crossingkeyintelligence.com
 
 ## Contact
