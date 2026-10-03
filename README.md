@@ -1,94 +1,87 @@
 # CrossingKey Public Research
 
-**Public-safe research notes, architecture studies, experiments, and evidence methods from CrossingKey Intelligence.**
+**Research into the systems that emerge between human intent and machine action.**
 
-This repository is not the documentation mirror for CrossingKey MCP and it is not a single-paper showcase. It is the research surface for questions that sit underneath multiple CrossingKey systems: how humans express intent to machines, how agents retain and qualify context, how autonomous systems prove what happened, how machine commerce survives ambiguous outcomes, how local AI can remain useful under constrained hardware, and how experimental architectures move from hypothesis to evidence.
+CrossingKey studies what happens when AI moves beyond answering questions and begins participating in sustained work: using tools, carrying context, coordinating actions, interacting with economic systems, and producing outcomes that need to be verified.
 
-## Research map
+The work spans human–AI interaction, agent architecture, persistent context, machine commerce, verification, protocol discovery, local intelligence, structured execution, provenance, and interface design.
 
-| Program | Central question | Public status |
-| --- | --- | --- |
-| Human–AI interaction | How should intent, correction, uncertainty, review, and operator authority be represented when AI can act? | Active research |
-| Agent execution & orchestration | How can tool-using systems plan, act, challenge their own plans, stop safely, and recover from failure? | Active research |
-| Memory, context & provenance | How can persistent context retain origin, freshness, confidence, and auditability without pretending model context is durable memory? | Active research |
-| Machine commerce | What state, authorization, reconciliation, entitlement, receipt, and replay controls are needed when software participates in commerce? | Active research + production-informed study |
-| Verification & evidence | What evidence is sufficient to distinguish an attempted action from a completed and verified outcome? | Active research |
-| Protocol discovery & interoperability | How do agents discover capabilities, understand requirements, compare offers, and cross protocol boundaries without hidden assumptions? | Active research |
-| Local/private AI | Which workloads can move toward local models, embeddings, memory, policy, and tooling under real hardware constraints? | Active research |
-| Governed languages & execution formats | Can structured documents and execution envelopes make authority, provenance, validation, and intent more inspectable? | Exploratory research |
-| Product & interface architecture | How should complex technical capability expose state, price, boundaries, failure, delivery, and proof to humans and agents? | Applied research |
+## Research programs
 
-These programs overlap, but they are not aliases for one another.
+### Human–AI Co-Evolution
 
-## Published research
+Repeated work with AI changes the human side of the system too. People learn new forms of abstraction, delegation, verification, and systems thinking; better structure from the human makes the machine more useful in return.
 
-### HAAR: High-Agency Agentic Runtime
+CrossingKey models this as a recursive loop:
 
-[Read the public paper](research/HAAR.md).
+`Interact → Observe → Adapt → Compress → Delegate → Verify → Repeat`
 
-HAAR is one research program inside this repository. It proposes a bounded execution architecture built around structured intent, fresh-state inspection, adversarial review, state shadowing, idempotent recovery, stopping rules, and human authority. It is published as research, not as a claim that the complete architecture is deployed or benchmarked.
+One useful concept emerging from the work is **interaction compression**: over time, a smaller amount of language can carry more operational meaning because vocabulary, constraints, roles, and working structures have accumulated.
 
-## Research lineages under review
+[Read the Human–AI Co-Evolution Model](research/HUMAN_AI_COEVOLUTION.md)
 
-The CrossingKey archive contains additional documented lines of investigation that are being reduced into public-safe research notes before publication:
+### Human–AI Interaction Architecture
 
-- **Human–AI Interaction Architecture:** intent, operator authority, interaction correction, review, escalation, and the transition from conversational assistance toward tool-using systems.
-- **CCMB / persistent-context research:** working, transactional, and longer-lived context; source/provenance labels; local persistence; retrieval; and the distinction between loaded state and model memory.
-- **NavigatorFS / evidence-bearing state:** integrity inventories, hashes, logs, receipts, exports, validation, diagnostics, and reconstructable local state.
-- **XKEY / `.xkey` research:** structured command/document envelopes, validation, governance, execution boundaries, and portable machine-readable intent. Archive material includes prototypes and unverified components, so no runtime-completeness claim is made here.
-- **Machine-commerce research:** x402, payment requirements, settlement verification, idempotency, replay prevention, entitlement issuance, receipts, provider state, and ambiguous-outcome reconciliation.
-- **Agent discovery research:** MCP discovery, registries, capability metadata, machine-readable requirements, quoting, and the gap between being callable and being safely purchasable.
-- **Local-first agent systems:** local models, embeddings, persistent state, policy components, constrained compute, privacy boundaries, and selective use of cloud models.
-- **Verification systems:** evidence ledgers, read-back checks, manifests, checksums, receipts, API responses, smoke tests, failure injection, and the question of what constitutes proof of completion.
-- **Applied evidence engines:** experiments such as property/public-record verification that separate physical evidence, official records, permit evidence, and marketing claims rather than collapsing them into a single confidence statement.
+The interaction itself can be engineered. This research examines intent, context, correction, operator authority, shared vocabulary, tool use, and the transition from isolated prompts toward sustained human-machine work.
 
-A lineage appearing here means there is archive evidence of research or experimentation. It does **not** mean every named system is complete, deployed, validated, commercially available, or suitable for public source release.
+### Agentic Systems
 
-## Research boundary
+How should an agent inspect state, plan, use tools, challenge a proposed action, recover from failure, and know when to stop? This program includes orchestration, bounded execution, state shadowing, recovery, and HAAR.
 
-This repository publishes conclusions and abstractions, not the private archive.
+[Read HAAR](research/HAAR.md)
 
-Public material must not include credentials, private customer information, personal records, private infrastructure topology, wallet secrets, seed material, unpublished security-sensitive implementation detail, proprietary datasets, or personal biographical material that is unnecessary to the technical claim.
+### Memory, Context & Provenance
 
-Names from experimental archives are not treated as proof of implementation. Where source material describes a component as proposed, recovered, prototype, specified, unverified, or incomplete, the public record preserves that uncertainty.
+Model context is not the same thing as durable memory. CrossingKey research explores persistent state, source-aware retrieval, local ledgers, semantic retrieval, canon-loading, freshness, confidence, and reconstructable context. CCMB and NavigatorFS grew from this line of work.
 
-## Evidence classes
+### Machine Commerce
 
-- **Standards fact:** explicitly defined by an authoritative specification or standards source.
-- **Observed result:** directly supported by a reproducible experiment, artifact, test, or system output.
-- **Implementation fact:** directly observable in source or a running implementation.
-- **Market observation:** observed across current services, registries, repositories, or developer activity.
-- **Community signal:** useful evidence of a problem or pattern, but insufficient alone to establish fact.
-- **Working hypothesis:** a proposed explanation, design, or opportunity that still requires testing.
-- **Experiment:** a controlled attempt to support or reject a hypothesis.
-- **Editorial analysis:** reasoned synthesis, clearly separated from established fact.
+Software increasingly needs to discover capabilities, understand price and requirements, authorize payment, execute work, reconcile settlement, receive entitlements, and verify fulfillment. CrossingKey studies that transaction as a state machine rather than a single payment event.
 
-## Publication rule
+Production work in [CrossingKey MCP](https://github.com/crossingkey-holdings/crossingkey-mcp) provides a live engineering counterpart to this research.
 
-Research moves toward publication through:
+### Verification & Evidence
 
-`Question → Evidence → Classification → Experiment or Analysis → Limitations → Public-safe Note`
+A command being sent is not the same as an outcome being achieved. This program studies read-back verification, receipts, manifests, hashes, state inspection, failure injection, reconciliation, and evidence chains that make machine actions reviewable after the fact.
 
-It moves toward engineering only when the evidence supports that transition:
+### Protocol Discovery & Interoperability
 
-`Research → Specification → Implementation → Verification → Production claim`
+How does an agent find a capability, understand it, determine what it costs, learn what it requires, and decide whether it can safely use it? This work follows MCP discovery, registries, capability metadata, quoting, machine-readable requirements, and the missing connective tissue between protocols.
 
-Those stages must not be collapsed.
+### Local & Private Intelligence
 
-## Start here
+What useful parts of an agent system can live on ordinary hardware? Research includes local models, embeddings, persistence, policy, orchestration, privacy boundaries, constrained compute, and selective cloud/local division of labor.
 
-- [Research index](RESEARCH_INDEX.md)
-- [Research methodology](METHODOLOGY.md)
-- [HAAR](research/HAAR.md)
+### XKEY & Structured Execution
 
-## Related public surfaces
+XKEY and `.xkey` explore machine-readable ways to carry intent, configuration, provenance, validation, and execution structure between systems. The work spans document formats, parsers, cartridges, command envelopes, and governance-aware execution.
 
-- Production MCP implementation: https://github.com/crossingkey-holdings/crossingkey-mcp
-- Open specifications: https://github.com/crossingkey-holdings/crossingkey-open-specifications
-- Developer documentation: https://github.com/crossingkey-holdings/crossingkey-developer-documentation
-- Professional evidence: https://github.com/crossingkey-holdings/experience
-- Company: https://crossingkeyintelligence.com
+### Evidence-Bearing Operational State
+
+NavigatorFS and related work investigate filesystems and operational records as inspectable evidence: inventories, hashes, logs, receipts, exports, status, validation, and diagnostics that make state easier to reconstruct.
+
+### Applied Verification
+
+CrossingKey also tests these ideas against messy real-world information. Experiments in public-record and property verification, for example, keep physical evidence, official records, permits, supplied claims, and unresolved questions distinct instead of flattening them into one answer.
+
+### Product & Interface Architecture
+
+Human-facing and agent-facing systems both need legible state. This research asks how capability, authority, price, progress, failure, delivery, and proof should appear in an interface when software is doing consequential work.
+
+## Research library
+
+The [Research Index](RESEARCH_INDEX.md) maps the programs, artifacts, and open questions.
+
+The [Research Methodology](METHODOLOGY.md) describes how CrossingKey investigates a question, runs experiments, records evidence, and publishes results.
+
+## Connected work
+
+- [CrossingKey MCP](https://github.com/crossingkey-holdings/crossingkey-mcp) — governed machine-commerce implementation
+- [CrossingKey Open Specifications](https://github.com/crossingkey-holdings/crossingkey-open-specifications) — interoperable technical conventions
+- [CrossingKey Developer Documentation](https://github.com/crossingkey-holdings/crossingkey-developer-documentation) — engineering guidance
+- [Professional evidence](https://github.com/crossingkey-holdings/experience) — implementation and verification record
+- [CrossingKey Intelligence](https://crossingkeyintelligence.com)
 
 ## Contact
 
-Research, technical, licensing, or collaboration inquiries: **founder@crossingkeyintelligence.com**
+Research, implementation, licensing, and collaboration: **founder@crossingkeyintelligence.com**
