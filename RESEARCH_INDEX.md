@@ -1,167 +1,119 @@
 # CrossingKey Research Index
 
-This index maps public research programs and documented research lineages. It intentionally distinguishes **published research**, **active research**, **exploratory work**, and **archive-backed lineages awaiting public-safe reduction**.
+CrossingKey research sits at the intersection of interaction design, agent architecture, state, verification, commerce, and local computing. This index is a map of the work and the questions connecting it.
 
-A named research direction is not automatically a shipped product, production capability, benchmark result, or claim of novelty.
+## Human–AI Co-Evolution
 
-## 1. Human–AI interaction
+**Core idea:** the useful unit of capability is not only the human or the model, but the evolving interaction between them.
 
-Research questions:
+Repeated interaction can teach the human to express systems through better abstractions, delegate through objectives and constraints, and verify machine work against observable evidence. Those changes improve the structure presented to the AI, which changes what can be accomplished in the next cycle.
 
-- How should an operator's intent, scope, constraints, and completion criteria be represented?
-- How should systems expose uncertainty instead of masking it with fluent output?
-- How should correction change system behavior without silently changing authority?
-- Which actions may be autonomous, automated, assisted, or manual?
-- How should retrieved or generated content remain subordinate to operator authority?
+**Model:** `Interact → Observe → Adapt → Compress → Delegate → Verify → Repeat`
 
-Archive evidence includes a documented Human–AI Interaction Architecture lineage and later governed-agent interaction work. Public publication should focus on technical interaction patterns rather than private biographical origins.
+**Key concept:** interaction compression.
 
-**Status:** active; additional public note planned.
+**Artifact:** [Human–AI Co-Evolution Model](research/HUMAN_AI_COEVOLUTION.md)
 
-## 2. Agent execution, orchestration & recovery
+Related work: Human–AI Interaction Architecture, persistent context, Navigator, verification.
 
-Research questions:
+## Human–AI Interaction Architecture
 
-- What belongs in the runtime around a model rather than in a prompt?
-- When does adversarial or multi-perspective review improve consequential decisions?
-- How should retries be bounded?
-- How should state be inspected before and after mutation?
-- How should ambiguous outcomes stop or reconcile before another side effect occurs?
+**Focus:** designing the boundary between intention and machine capability.
 
-Published work:
+Questions include how intent is represented, how context accumulates, how corrections alter future work, how authority remains with the operator, and how shared vocabulary changes the bandwidth of interaction.
 
-- [HAAR: High-Agency Agentic Runtime](research/HAAR.md)
+Related concepts include navigation, structured intent, interaction compression, persistent context, and governed execution.
 
-**Status:** active.
+## Agent Execution & Orchestration
 
-## 3. Memory, context & provenance
+**Focus:** the runtime surrounding a capable model.
 
-Research questions:
+Research covers planning, tool use, state inspection, adversarial review, bounded retries, postcondition verification, escalation, and recovery from ambiguous outcomes.
 
-- What is the difference between model context, persisted state, and durable memory?
-- How should stored context identify where it came from?
-- How should freshness and confidence affect retrieval?
-- How can local persistence reduce unnecessary disclosure to remote systems?
-- How can an operator reconstruct why a piece of context influenced an action?
+**Published artifact:** [HAAR: High-Agency Agentic Runtime](research/HAAR.md)
 
-Archive-backed lines include CCMB concepts, source-qualified memory records, local ledgers, semantic retrieval, canon-loading, and state/evidence stores. Some source documents contain aspirational implementation claims; those are not reproduced as established facts.
+## Memory, Context & Provenance
 
-**Status:** archive-backed research lineage; public note pending.
+**Focus:** making useful context persistent, attributable, retrievable, and inspectable.
 
-## 4. Machine commerce & economic state
+Research threads include CCMB, local ledgers, semantic retrieval, working versus longer-lived state, provenance labels, freshness, confidence, and canon-loading.
 
-Research questions:
+A recurring architectural distinction is simple: persisted state can be loaded and inspected; conversational familiarity alone is not persistence.
 
-- How should agents discover paid capabilities without spending?
-- What separates quote, authorization, payment, settlement, execution, fulfillment, entitlement, and receipt?
-- How should idempotency and replay protection behave around external settlement?
-- What should happen when payment state is uncertain?
-- What evidence allows a buyer, seller, or agent to verify fulfillment?
+## Machine Commerce
 
-CrossingKey MCP provides a production-informed implementation surface, while this repository studies the underlying problems independently of any single release.
+**Focus:** economic interaction between software systems.
 
-**Status:** active research + implementation feedback.
+The research decomposes a machine purchase into discovery, requirements, quote, authorization, payment, settlement, execution, fulfillment, entitlement, receipt, and reconciliation.
 
-## 5. Verification, evidence & failure analysis
+This line directly informs the public [CrossingKey MCP](https://github.com/crossingkey-holdings/crossingkey-mcp).
 
-Research questions:
+## Verification & Evidence
 
-- What counts as evidence that an operation actually completed?
-- When are logs sufficient, and when is external read-back required?
-- How should failed experiments and negative results be preserved?
-- Can a system reconstruct the chain from request through authority, action, resulting state, and verification?
-- How should destructive recovery tests be designed without converting test settlement into revenue claims?
+**Focus:** proving outcomes rather than merely recording attempts.
 
-Methods under study include manifests, hashes, receipts, API responses, health checks, smoke tests, state inspection, persistent ledgers, failure injection, and reconciliation.
+Methods explored across CrossingKey work include read-back checks, manifests, checksums, receipts, API responses, health checks, state inspection, persistent ledgers, failure injection, and reconciliation.
 
-**Status:** active.
+The deeper question is how an autonomous system can leave enough evidence for a human or another machine to reconstruct what actually happened.
 
-## 6. Protocol discovery & interoperability
+## Protocol Discovery & Interoperability
 
-Research questions:
+**Focus:** the path from capability existence to capability use.
 
-- Where do agents discover MCP servers and capabilities?
-- Which metadata helps an agent decide whether a capability is usable?
-- How should requirements, price, expected result, authorization state, and payment methods be exposed before execution?
-- Which gaps exist between protocol registration, discoverability, interoperability, and actual successful use?
-- Which missing primitives are repeatedly rebuilt across agent systems?
+Research follows MCP discovery, registries, capability descriptions, machine-readable requirements, quoting, compatibility, and the information an agent needs before deciding whether to invoke or purchase something.
 
-**Status:** active.
+## Local & Private Intelligence
 
-## 7. Local/private AI & edge operation
+**Focus:** useful agent infrastructure under real hardware constraints.
 
-Research questions:
+This work explores local models, embeddings, persistence, policy components, orchestration, storage, latency, privacy, and hybrid local/cloud execution on consumer hardware.
 
-- Which workloads can run usefully on consumer hardware?
-- What belongs locally: models, embeddings, memory, policy, verification, or orchestration?
-- How should quantization, memory, storage, latency, privacy, maintenance, and fallback be evaluated together?
-- When is selective cloud use preferable to forcing every workload local?
+## XKEY & `.xkey`
 
-No claim is made that local operation automatically provides privacy, accuracy, security, or adequate performance.
+**Focus:** structured, portable representations of machine intent and execution context.
 
-**Status:** active/applied.
+The XKEY lineage explores documents, parsers, cartridges, command envelopes, validation, provenance, configuration, and governance-aware execution.
 
-## 8. Governed languages & execution formats
+Research questions include which information should travel with an executable instruction, where validation ends and policy begins, and how an execution document can remain inspectable across runtimes.
 
-Archive-backed work includes XKEY and `.xkey` concepts around structured documents, command envelopes, validation, governance, cartridges, parsing, and execution.
+## NavigatorFS & Evidence-Bearing State
 
-The archive contains components marked recovered, prototype, specified, unverified, or incomplete. Accordingly, this repository does not claim a complete language implementation, compiler, runtime, or production deployment.
+**Focus:** treating operational state as something that can be inspected and reconstructed.
 
-Research questions:
+The lineage includes integrity inventories, file hashes, relative paths, modification records, logs, receipts, exports, validation, status, and diagnostic operations.
 
-- Can intent be represented in a portable, inspectable structure before execution?
-- Which fields should bind authority, provenance, expected effects, and validation?
-- Where should parsing stop and policy enforcement begin?
-- How can a structured execution document remain useful across runtimes?
+It connects filesystem design to the larger CrossingKey interest in provenance and verification.
 
-**Status:** exploratory/archive-backed; formal public note pending.
+## Applied Verification
 
-## 9. Evidence-bearing filesystems & operational state
+**Focus:** keeping unlike forms of evidence unlike.
 
-NavigatorFS and related archive material explore the idea that operational state should be inspectable as evidence rather than treated as invisible application internals.
+Public-record and property-verification experiments explored how physical observations, official records, permit evidence, supplied claims, and unresolved questions can be gathered into one workflow without erasing their different evidentiary weight.
 
-Research themes include integrity inventories, relative-path records, size and modification metadata, hashes, logs, receipts, exports, validation, status, and diagnostics.
+The pattern generalizes to due diligence, technical verification, research synthesis, and agent-generated reports.
 
-**Status:** archive-backed research lineage.
+## Product & Interface Architecture
 
-## 10. Applied public-data verification
+**Focus:** making complex systems understandable at the moment of action.
 
-CrossingKey experiments include evidence-first engines that gather public records and keep evidence classes separate. One documented property-verification experiment distinguished official parcel/GIS records, physical or imagery evidence, permit evidence, and supplied marketing claims, and generated both operator evidence and client-safe output.
+Research includes how interfaces communicate capability, authority, price, state, progress, failure, delivery, and proof to both humans and software agents.
 
-The research interest is broader than the individual domain: how to prevent heterogeneous evidence from being flattened into a single unsupported conclusion.
+## Provenance & Chronology
 
-**Status:** applied experimental research.
+**Focus:** preserving the development record of technical ideas and artifacts.
 
-## 11. Product & interface architecture
+Dates, version history, hashes, manifests, commits, timestamps, and original artifacts make it possible to reconstruct how a system developed and compare versions without relying entirely on retrospective narrative.
 
-Research questions:
+## Current publication path
 
-- How should complex technical systems explain scope, state, price, delivery, failure, and verification?
-- How should interfaces reveal what the machine may do versus what it is authorized to do?
-- How can technical capability become a bounded offer without overstating maturity?
-- Which interface conventions make agent-facing and human-facing commerce understandable at the same time?
-
-**Status:** applied research.
-
-## 12. Provenance & chronology
-
-Research and engineering artifacts are preserved with dates, hashes, manifests, version history, or other evidence where available. Chronology can establish that a document or concept existed by a certain point when the underlying evidence supports it.
-
-Chronology alone does not establish independent invention, external access, copying, legal ownership, infringement, or causal influence.
-
-**Status:** ongoing evidence practice.
-
-## Publication queue
-
-The next public notes should be selected by evidence quality, technical value, and publication safety rather than by how dramatic an internal project name sounds.
-
-Candidate subjects:
+The strongest candidates for the next standalone research notes are:
 
 1. persistent context and provenance;
-2. machine-commerce state and ambiguous settlement;
+2. machine-commerce state and reconciliation;
 3. verification as an execution primitive;
 4. capability discovery before payment;
-5. local-first agent architecture under constrained hardware;
-6. governed execution documents and XKEY/`.xkey` research.
+5. local-first agent architecture on constrained hardware;
+6. XKEY and structured execution;
+7. evidence-bearing operational state.
 
-Every note must pass [METHODOLOGY.md](METHODOLOGY.md) before publication.
+See [METHODOLOGY.md](METHODOLOGY.md) for the research process.
