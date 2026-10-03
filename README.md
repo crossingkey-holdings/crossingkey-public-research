@@ -2,7 +2,21 @@
 
 **Selected research, technical analysis, and working models from CrossingKey Intelligence.**
 
-This repository is the research layer of the public surface. It exists to show how claims are formed, challenged, and translated into systems without presenting hypotheses as facts.
+This is the research layer of the public surface: where architectural ideas are stated with evidence levels, limitations, and testable next steps rather than promoted from hypothesis to fact.
+
+## Featured research
+
+### HAAR: High-Agency Agentic Runtime
+
+HAAR is a proposed architecture for bounded, verifiable AI execution. It focuses on structured intent, fresh-state inspection, adversarial review, state shadowing, idempotent recovery, bounded attempts, and explicit human authority.
+
+**Read:** [research/HAAR.md](research/HAAR.md)
+
+Execution outline:
+
+`Authorize → Normalize → Inspect → Plan → Review → Execute → Verify → Record or Escalate`
+
+HAAR is published as research, not as a claim that the complete architecture is deployed or benchmarked.
 
 ## Current research areas
 
@@ -10,6 +24,7 @@ This repository is the research layer of the public surface. It exists to show h
 | --- | --- |
 | Human–AI interaction | Intent, context, correction, review, and shared understanding |
 | Governed agentic systems | Permissions, authority, tool use, state, observability, and recovery |
+| Machine commerce | Authorization, idempotency, reconciliation, receipts, entitlements, and bounded execution |
 | Product architecture | Converting technical capability into understandable commercial outcomes |
 | Developer tools | Durable workflows, interoperability, documentation, and verification |
 | Local/private AI | Useful AI systems under consumer hardware, privacy, and resource constraints |
@@ -31,11 +46,13 @@ This repository is the research layer of the public surface. It exists to show h
 
 ## Start here
 
-- [`RESEARCH_INDEX.md`](RESEARCH_INDEX.md)
-- [`METHODOLOGY.md`](METHODOLOGY.md)
+- [HAAR](research/HAAR.md)
+- [RESEARCH_INDEX.md](RESEARCH_INDEX.md)
+- [METHODOLOGY.md](METHODOLOGY.md)
 
 ## Related public surfaces
 
+- Production machine-commerce source: https://github.com/crossingkey-holdings/crossingkey-mcp
 - Professional evidence: https://github.com/crossingkey-holdings/experience
 - Open specifications: https://github.com/crossingkey-holdings/crossingkey-open-specifications
 - Developer documentation: https://github.com/crossingkey-holdings/crossingkey-developer-documentation
@@ -43,4 +60,4 @@ This repository is the research layer of the public surface. It exists to show h
 
 ## Contact
 
-Research, technical, or collaboration inquiries: **founder@crossingkeyintelligence.com**
+Research, technical, licensing, or collaboration inquiries: **founder@crossingkeyintelligence.com**
